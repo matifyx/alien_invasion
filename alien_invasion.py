@@ -34,20 +34,30 @@ class AlienInvasion:
     # Code aus run_game in neue Methode eingefügt
     def _check_events(self):
             # reagiert auf Tastatur- und Mausereignisse.
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
-                elif event.type == pygame.KEYDOWN:
-                     if event.key == pygame.K_RIGHT:
-                          self.ship.moving_right = True
-                     elif event.key == pygame.K_LEFT:
-                          self.ship.moving_left = True
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                self._check_keydown_events(event)
+            elif event.type == pygame.KEYUP:
+                self._check_keyup_events(event)
+                     
 
-                elif event.type == pygame.KEYUP:
-                     if event.key == pygame.K_RIGHT:
-                          self.ship.moving_right = False
-                     elif event.key == pygame.K_LEFT:
-                          self.ship.moving_left = False
+    def _check_keydown_events(self, event):
+        """Reagiert auf Tastenbetätigung"""
+        if event.key == pygame.K_RIGHT:
+            self.ship.moving_right = True
+        elif event.key == pygame.K_LEFT:
+            self.ship.moving_left = True
+        elif event.key == pygame.K_q:
+            sys.exit()
+
+    def _check_keyup_events(self, event):
+        """Reagiert auf Tastenbetätigung"""
+        if event.key == pygame.K_RIGHT:
+            self.ship.moving_right = False
+        elif event.key == pygame.K_LEFT:
+            self.ship.moving_left = False
 
     # Code aus run_game in neue Methode eingefügt
     def _update_screen(self):
