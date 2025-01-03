@@ -1,0 +1,23 @@
+In Alien Invasion steuert der Spieler ein Raumschiff, das mittig am unteren Bildschirmrand erschein.
+	-> Startpostion Spielerschiff: 
+		- unterer Bildschirmrand, mittig ausgerichtet
+
+Er kann das Schiff mit den Pfeiltasten nach rechts und links verschieben und mithilfe der Leertaste Geschosse abfeuern.
+	-> Steuerung Spielerschiff:
+	 	- Pfeiltasten links/rechts	: Bewegung des Schiffs nach links und rechts
+		- Leertaste			: Geschosse abfeuern
+
+Zu Spielbeginn füllt eine Flotte außerirdischer Raumschiffe den Himmel aus und bewegt sich auf dem Bildschirm seitwärts und nach unten.
+	-> Bewegung außerirdische Schiffe:
+		- Bewegen sich seitwärts und nach unten
+
+Der Spieler schießt, um die gegnersichen Schiffe zu zerstören. Wenn er alle abgeschossen hat, erscheint eine neue Flotte, die sich schneller bewegt
+als die vorhergehende. Stößt ein außerirdisches Schiff auf das Schiff des Spielers oder erreicht es den unteren Bildschirmrand, verliert der Spieler ein Schiff.
+Hat der Spieler drei Schiffe verloren, endet das Spiel
+	-> Ziel des Spiels:
+		- Spieler muss gegnerische Flotte komplett abschießen
+			-> Wenn alle abgeschossen sind: Neue Flotte, die sich schneller bewegt
+		- Spieler hat 3 Schiffe
+			-> Wenn ein gegnerisches Schiff Spielerschiff berührt		-> Verliert Spieler ein Schiff
+			-> Wenn ein gegnersiches Schiff unteren Bildschirmrand erreicht -> Verliert Spieler ein Schiff
+			!!! Wenn alle 3 Schiffe verloren sind -> GAME OVER !!!
