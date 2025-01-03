@@ -1,6 +1,7 @@
 import sys # wird benötigt damit der Spieler das Spiel beenden kann.
 import pygame # enthält alles was zur Entwichlung eines Spiels benötigt wird.
 from settings import Settings
+from ship import Ship
 
 class AlienInvasion:
     """Allgemeine Klasse zur Verwaltung von Spielwerten und Verhalten."""
@@ -17,6 +18,7 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
+        self.ship = Ship(self)
 
         # Legt die Hintergrundfarbe fest (230, 230, 230).
         self.bg_color = (self.settings.bg_color)
@@ -31,6 +33,7 @@ class AlienInvasion:
 
             # Zeichnet den Bildschirm bei jedem Schleifendurchlauf neu.
             self.screen.fill(self.bg_color)
+            self.ship.blitme()
 
             # Macht den zuletzt gezeichneten Bildschirm sichtbar.
             pygame.display.flip()
