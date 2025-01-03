@@ -17,11 +17,14 @@ class Ship():
 
         # Movemant flag; , beginne mit einem unbewegtem Schiff.
         self.moving_right = False
+        self.moving_left = False
 
     def update(self):
         """Aktualisiert die Position des Schiffs abhängig von Movement Flag"""
         if self.moving_right:
             self.rect.x += 1
+        if self.moving_left:
+            self.rect.x -= 1
 
     def blitme(self):
         """Platziert das Schiff auf seine aktuelle Position"""
