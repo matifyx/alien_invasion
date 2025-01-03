@@ -21,7 +21,7 @@ class AlienInvasion:
         pygame.display.set_caption("Alien Invasion")
         self.ship = Ship(self)
 
-        # Legt die Hintergrundfarbe fest (230, 230, 230).
+        # Legt die Hintergrundfarbe fest.
         self.bg_color = (self.settings.bg_color)
 
     def run_game(self):
@@ -41,8 +41,7 @@ class AlienInvasion:
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
-                self._check_keyup_events(event)
-                     
+                self._check_keyup_events(event)                     
 
     def _check_keydown_events(self, event):
         """Reagiert auf Tastenbetätigung"""
