@@ -26,18 +26,24 @@ class AlienInvasion:
     def run_game(self):
         """Start der Hauptschleife für das Spiel."""
         while True:
+            self._check_events() # Methoden nur innerhalb der Klasse verfügbar 
+            self._update_screen() # (Punktschreibweise)
+            self.clock.tick(60)
+
+    # Code aus run_game in neue Methode eingefügt
+    def _check_events(self):
             # reagiert auf Tastatur- und Mausereignisse.
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
 
+    # Code aus run_game in neue Methode eingefügt
+    def _update_screen(self):
             # Zeichnet den Bildschirm bei jedem Schleifendurchlauf neu.
             self.screen.fill(self.bg_color)
             self.ship.blitme()
-
             # Macht den zuletzt gezeichneten Bildschirm sichtbar.
-            pygame.display.flip()
-            self.clock.tick(60)
+            pygame.display.flip()      
 
 if __name__ == '__main__':
     # Erstellt eine Spielinstanz und führt das Spiel aus.
