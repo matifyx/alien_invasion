@@ -11,13 +11,15 @@ class AlienInvasion:
         # Damit wird die Uhr am Ende der While-Schleife in run_game()
         # zum Ticken gebracht
         self.clock = pygame.time.Clock()
+        self.settings = Settings()
         # Fenster indem alle grafischen Elemente erstellt werden
         # Übergabe eines Tupels -> Fenstergröße 1200 x 800 Pixel (B x H)
-        self.screen = pygame.display.set_mode((1200, 800))
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
 
-        # Legt die Hintergrundfarbe fest.
-        self.bg_color = (230, 230, 230)
+        # Legt die Hintergrundfarbe fest (230, 230, 230).
+        self.bg_color = (self.settings.bg_color)
 
     def run_game(self):
         """Start der Hauptschleife für das Spiel."""
