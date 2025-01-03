@@ -27,6 +27,7 @@ class AlienInvasion:
         """Start der Hauptschleife für das Spiel."""
         while True:
             self._check_events() # Methoden nur innerhalb der Klasse verfügbar 
+            self.ship.update()
             self._update_screen() # (Punktschreibweise)
             self.clock.tick(60)
 
@@ -37,10 +38,11 @@ class AlienInvasion:
                 if event.type == pygame.QUIT:
                     sys.exit()
                 elif event.type == pygame.KEYDOWN:
-                     if event.key == pygame.K_RIGHT: #Es reagiert nur auf 
-            # Tastandruck -> für kontinuierliche Bewegung wird ein Flag benötigt
-                          # Bewegt das Schiff nach rechts.
-                          self.ship.rect.x += 1
+                     if event.key == pygame.K_RIGHT:
+                          self.ship.moving_right = True
+                elif event.type == pygame.KEYUP:
+                     if event.key == pygame.K_RIGHT:
+                          self.ship.moving_right = False
 
     # Code aus run_game in neue Methode eingefügt
     def _update_screen(self):
