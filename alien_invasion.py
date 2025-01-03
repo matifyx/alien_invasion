@@ -36,6 +36,11 @@ class AlienInvasion:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
+                elif event.type == pygame.KEYDOWN:
+                     if event.key == pygame.K_RIGHT: #Es reagiert nur auf 
+            # Tastandruck -> für kontinuierliche Bewegung wird ein Flag benötigt
+                          # Bewegt das Schiff nach rechts.
+                          self.ship.rect.x += 1
 
     # Code aus run_game in neue Methode eingefügt
     def _update_screen(self):
