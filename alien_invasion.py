@@ -1,5 +1,6 @@
 import sys # wird benötigt damit der Spieler das Spiel beenden kann.
 import pygame # enthält alles was zur Entwichlung eines Spiels benötigt wird.
+from settings import Settings
 
 class AlienInvasion:
     """Allgemeine Klasse zur Verwaltung von Spielwerten und Verhalten."""
